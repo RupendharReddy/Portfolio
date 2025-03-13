@@ -1,5 +1,7 @@
-import react from 'react';
+// import react from 'react';
 import './home.css';
+// import { Button } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 const HomePage = () => {
   return (
     <div className="home">
@@ -17,6 +19,9 @@ const HomePage = () => {
             <h5>Hey there, I’m Varugu Rupendhar Reddy a passionate Full Stack Developer dedicated to building </h5>
             <h5>high-performance, scalable, and secure web applications. With expertise in both front-end and</h5>
             <h5> back-end technologies, I create seamless digital experiences that drive impact.</h5>
+            <Button variant='primary'>view more</Button>
+            <Button variant="primary">Primary</Button>
+            <Button variant="outline-primary">Primary</Button>
         </center>
       </div>
     </div>
