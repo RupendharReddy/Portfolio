@@ -1,0 +1,85 @@
+#about {
+    background-color: #001e35;
+    /* padding: 80px 50px; */
+    padding-bottom: 80px;
+    text-align: center;
+    /* border: 2px solid white; */
+}
+.about-container {
+    padding-right: 60px;
+    display: flex;
+    flex-direction: row;
+    margin-top: -20px;
+    /* align-items: center; */
+  }
+
+  .about-image-div {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    margin: 0 auto 40px;
+    /* border: 2px solid white; */
+  }
+  .about-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    /* width: 100%;
+    height: 100%; */
+    width: 300px;
+    height: 500px;
+    padding-top: 0px;
+    object-fit: cover;
+    /* border: 2px solid white; */
+  }
+  
+  .about-image {
+    position: relative;
+    z-index: 2;
+    width: 200px;
+    height: 545px;
+    /* padding-left: px; */
+    /* padding-top: 0px; */
+    /* width: 100%;
+    height: 100%; */
+    /* object-fit: cover; */
+    /* border: 2px solid white; */
+  }
+  .outlined-text {
+    font-size: 100px;
+    font-weight: bold;
+    color: transparent;
+    display: inline-block;
+    margin-bottom: 40px;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1); /* light white outline */
+    /* text-stroke: 1px rgba(255, 255, 255, 0.1); */
+    letter-spacing: 10px;
+  }
+  
+  .about-content {
+    max-width: 800px;
+    /* border: 2px solid white; */
+    color: white;
+    text-align: left;
+  }
+.about-content h1{
+    color: red;
+}
+.about-paragraph {
+    margin-top: -1%;
+    color: #99a2a9;
+    line-height: 25px;
+}
+tag{
+    border: 1px solid #99a2a9;;
+    border-radius: 20px;
+    padding: 10px;
+    line-height: 60px;
+    color: #99a2a9;
+    margin-right: 10px;
+    /* margin-bottom: 20px; */
+}
+.edu .about-paragraph{
+  margin-top: -1.5%;
+}

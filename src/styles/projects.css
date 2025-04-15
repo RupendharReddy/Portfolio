@@ -1,0 +1,41 @@
+#projects{
+  background-color: #001529;
+  text-align: center;
+}
+.outlined-text-project {
+    font-size: 100px;
+    font-weight: bold;
+    color: transparent;
+    display: inline-block;
+    margin-top:-4%;
+    /* margin-bottom: 40px; */
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1); /* light white outline */
+    /* text-stroke: 1px rgba(255, 255, 255, 0.1); */
+    letter-spacing: 10px;
+    justify-items: center;
+  }
+  .title{
+    color: white;
+    font-size: 50px;
+    margin-top: -7%;
+  }
+  .title b{
+    color: red;
+    font-size: 40px;
+    font-stretch:ultra-expanded;
+  }
+  
+  .project-card{
+    /* background-color: #001529; */
+    border-radius: 10px;
+    /* margin: 10px; */
+    width: 300px;
+    height: 200px;
+  }
+  .card-meta{
+    border: 2px solid white;
+    background-color:#001e35;
+  }
+  card{
+    border: 2px solid red;
+  }

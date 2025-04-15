@@ -1,0 +1,122 @@
+*{
+    font-family: "Inter", sans-serif;
+}
+.navbar-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 74px;
+    background-color: #001529;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    color: white;
+  }
+  
+  /* Wrap logo and links */
+  .navbar-inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* LOGO */
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-left: 70px;
+    margin-right: 40px;
+  }
+  
+  /* DESKTOP MENU */
+  .desktop-menu {
+    display: flex;
+    gap: 30px;
+    margin-left:40%; /* Push to right side */
+    transform: translateX(-25%); /* Move it toward the middle */
+  }
+  
+  .nav-link a {
+    color: #99a2a9;
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .nav-link a:hover,
+  .nav-link a.active-link {
+    border-bottom: 2px solid #1890ff;
+    color: white;
+  }
+  
+  /* MOBILE MENU ICON */
+  .mobile-menu-icon {
+    display: none;
+    margin-left: auto;
+    margin-right: 50px;
+  }
+  
+  /* DRAWER */
+  .custom-drawer .ant-drawer-body {
+    padding: 20px;
+    background-color: #001529;
+    color: white;
+  }
+  
+  .drawer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .drawer-link a {
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .drawer-link a:hover,
+  .drawer-link a.active-link {
+    color: white;
+    border-bottom: 2px solid #1890ff;
+  }
+  
+  /* RESPONSIVENESS */
+  @media screen and (max-width: 768px) {
+    .desktop-menu {
+      display: none;
+    }
+  
+    .mobile-menu-icon {
+      display: block;
+    }
+    .logo{
+        margin-left: 30px;
+    }
+  }
+  
+  
+    /* 📲 Tablet View (between 769px and 1024px) */
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+        .desktop-menu {
+          display: flex;
+          gap: 24px;
+          margin-left: auto;
+          margin-right: 20px;
+        }
+      
+        .logo {
+          margin-left: 20px;
+        }
+      
+        .nav-link {
+          font-size: 14px;
+        }
+      }
+      
