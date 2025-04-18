@@ -7,13 +7,19 @@ import aboutBG from "../assets/aboutBG.png";
 const { Title, Paragraph, Text } = Typography;
 
 const About = () => {
+  const skills = [
+    "React.js", "Node.js", "Express.js", "MySql", "MongoDB","MVC",
+    "HTML", "CSS", "JavaScript", "Antd",
+    "Python", "C", "Java", "Go lang", "Git", "AI tools"
+  ];
+
   return (
     <section id="about">
       <Text className="outlined-text">ABOUT</Text>
       <div className="about-container">
         <div className="about-image-div">
-          <img src={aboutBG} alt="about" className="about-image-bg"/>
-          <img src={about} alt="about" className="about-image"/>
+          <img src={aboutBG} alt="about" className="about-image-bg" />
+          <img src={about} alt="about" className="about-image" />
         </div>
         <div className="about-content">
           <h1>About Me</h1>
@@ -24,12 +30,12 @@ const About = () => {
             Innovative Full Stack Developer passionate about crafting dynamic, high-performance web solutions.
             Focused on creating seamless user experiences, optimized systems, and impactful digital products.
           </p>
-          <br/>
+          <br />
           <h1>Technologies and Skills</h1>
-          <div>
-            <tag>React.js</tag> <tag>Node.js</tag> <tag>Express.js</tag> <tag>MySql</tag><tag>MongoDB</tag><br/>
-            <tag>HTML</tag> <tag>CSS</tag> <tag>JavaScript</tag> <tag>Antd</tag><br/>
-            <tag>Python</tag> <tag>C</tag> <tag>Java</tag> <tag>Go lang</tag> <tag>Git</tag> <tag>AI tools </tag>
+          <div className="tags-container">
+            {skills.map((skill, index) => (
+              <tag key={index} id="tag">{skill}</tag>
+            ))}
           </div>
           <div className="edu">
             <h1>Education</h1>

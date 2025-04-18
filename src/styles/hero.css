@@ -76,7 +76,7 @@
     height: 430px;
     border-radius: 50% 50% 0% 50% ;
 }
-.social_links {
+.social_links a{
     /* background-color: red; */
     color: white;
     /* font-size: 28px; */

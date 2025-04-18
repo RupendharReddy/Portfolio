@@ -31,10 +31,20 @@ const Hero = () => {
             <img src={rupe} alt="Rupe"/>
           </div>
           <div className="social_links">
-            <LinkedinOutlined className="link" /><br />
-            <GithubOutlined className="link" /><br />
-            <MailOutlined className="link" /><br />
-            <DiscordOutlined className="link" />
+          <div className="social_links">
+            <a href="https://www.linkedin.com/in/rupendhar-reddy-varugu-390a53263/" target="_blank" rel="noopener noreferrer">
+              <LinkedinOutlined className="link" />
+            </a><br />
+            <a href="https://github.com/RupendharReddy" target="_blank" rel="noopener noreferrer">
+              <GithubOutlined className="link" />
+            </a><br />
+            <a href="mailto:varugurupendharreddy@gmail.com">
+              <MailOutlined className="link" />
+            </a><br />
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <DiscordOutlined className="link" />
+            </a>
+          </div>
           </div>
         </div>
       </div>

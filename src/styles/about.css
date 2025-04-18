@@ -71,11 +71,11 @@
     color: #99a2a9;
     line-height: 25px;
 }
-tag{
+#tag{
     border: 1px solid #99a2a9;;
     border-radius: 20px;
     padding: 10px;
-    line-height: 60px;
+    line-height: 25px;
     color: #99a2a9;
     margin-right: 10px;
     /* margin-bottom: 20px; */
@@ -83,3 +83,18 @@ tag{
 .edu .about-paragraph{
   margin-top: -1.5%;
 }
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* tag {
+  background-color: #002b4d;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #d4e0f0;
+} */
