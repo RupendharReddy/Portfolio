@@ -65,8 +65,7 @@ const Projects = () => {
         "Javascript",
       ],
       github: "https://github.com/RupendharReddy/todo",
-      videoUrl:
-        "https://drive.google.com/file/d/1O2hJcR1zKDtCqyrA6SoZwXUMfmRfnN5Z/preview",
+      videoUrl:"https://drive.google.com/file/d/1jLpkZ6ZvHojGblvxrgWRmmUrHDhKC1JI/preview",
     },
   ]);
 

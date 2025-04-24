@@ -3,7 +3,7 @@ const { Title, Paragraph } = Typography;
 
 const Services = () => {
   return (
-    <section id="services" style={{ padding: "100px 20px", backgroundColor: "#f9f9f9" }}>
+    <section id="services" style={{ padding: "100px 20px", backgroundColor:"#001529" }}>
       <Title>Services</Title>
       <Paragraph>Things I can help you with...</Paragraph>
     </section>

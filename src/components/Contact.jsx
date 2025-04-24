@@ -5,7 +5,7 @@ const { Title } = Typography;
 
 const Contact = () => {
   return (
-    <section id="contact" style={{ padding: "80px 20px", backgroundColor: "#f0f2f5" }}>
+    <section id="contact" style={{ padding: "80px 20px", backgroundColor: "#001e35" }}>
       <Title level={2}>Contact Me</Title>
       <Form layout="vertical" style={{ maxWidth: 600, margin: "auto" }}>
         <Form.Item label="Name" name="name">

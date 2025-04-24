@@ -1,6 +1,6 @@
 #hero{
     height: 80vh;
-
+    width: 100%;
 }
 .container{
     display: flex;
@@ -44,7 +44,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: 20px solid red;
+    border: 15px solid red;
     border-right: 10px;
     background-color: #001529;
     border-radius: 50% 0% 0% 50% ;
@@ -56,7 +56,7 @@
     /* padding-left: 50px; */
     /* border: 10px solid white; */
     /* border: 100px; */
-    position: absolute;
+    /* position: absolute; */
     /* margin-left: 300px; */
     /* z-index: 1; */
     height: 650px;
@@ -71,9 +71,9 @@
 .imgdiv2 img{
     width: 400px;
     /* padding-left: 50px; */
-    border: 10px solid white;
+    border: 15px solid rgb(224, 216, 216);
     /* border: 100px; */
-    height: 430px;
+    height: 460px;
     border-radius: 50% 50% 0% 50% ;
 }
 .social_links a{
@@ -101,7 +101,7 @@
   
 .content p{
     /* margin-bottom:% ; */
-    max-width: 550px;
+    /* max-width: 550px; */
     line-height: 30px;
     color: #99a2a9;
 }
@@ -129,4 +129,84 @@
 .content a button:hover{
     background-color: red;
     color: white;
+}
+
+
+@media screen and (max-width: 768px){
+    .placeholder h5{
+        display: none;
+    }
+    .imgdiv{
+        position: absolute;
+        width: 300px;
+        height: 39vh;
+        border: 5px solid red;
+        border-right: 0px;
+        background-color: #001529;
+        border-radius: 45% 0% 0% 45% ;
+        z-index: 200;
+        margin-right: 0;
+        margin-left: 10px;
+        padding-left: 0px;
+    }
+    .imgdiv2{
+        width:100%;
+        z-index: 2;
+        /* border-radius: 50% 50% 0% 50% ; */
+        padding: 6% 0% 6% 0%;
+    }
+    .imgdiv2 img{
+        width: 170px;
+        height: 190px;
+        margin-left: 30px;
+        /* padding-left: 50px; */
+        border: 5px solid rgb(224, 216, 216);
+        /* border: 100px; */
+        border-radius: 50% 50% 45% 50% ;
+    }
+    .link{
+        padding: 7px;
+        width: 25px;
+        /* font-size: 2px; */
+    }
+    .social_links{
+        margin-right: 5px;
+    }
+    .content{
+        margin-top: 45vh;
+        font-size: 13px;
+    }
+    #name{
+        font-size: 20px;
+    }
+    .content{
+        width: 83%;
+    }
+    .content h5{
+        border: 2px solid red;
+        width: 50px;
+        margin-top: 0%;
+        /* height: 50px; */
+        border: 0px 0px 4px 0px ;
+    }
+    .content a button{
+        height: 25px;
+        width: 75px;
+        font-size: 9px;
+    }
+
+}
+
+@media screen and (min-height: 769px) and (max-width: 915px){
+    .imgdiv{
+        position: absolute;
+        width: 300px;
+        height: 30vh;
+    }
+    .content{
+        margin-top: 35vh;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px){
+    
 }

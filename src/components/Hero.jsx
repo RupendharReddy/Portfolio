@@ -5,6 +5,7 @@ import rupe from '../assets/rupe.png'
 import cv from '../../public/Rupe_CV.pdf'
 import { Typography } from "antd";
 import { DiscordOutlined, GithubOutlined, LinkedinOutlined, MailOutlined } from "@ant-design/icons";
+import { TypeAnimation } from "react-type-animation";
 
 const { Title, Paragraph } = Typography;
 
@@ -19,7 +20,23 @@ const Hero = () => {
           <h1>Hi There, i'm</h1>
           <h1 id="name">RUPENDHAR REDDY VARUGU</h1>
           <h5></h5>
-          <h2>Full Stack Developer</h2>
+          <TypeAnimation
+            sequence={[
+              // Same substring at the start will only be typed out once, initially
+              'Full Stack Developer',
+              1000, // wait 1s before replacing "Mice" with "Hamsters"
+              'Software Developer',
+              1000,
+              // 'Frontend Developer',
+              // 1000,
+              // 'Backend Developer',
+              // 1000
+            ]}
+            wrapper="span"
+            speed={50}
+            style={{ fontSize: '2em', display: 'inline-block' }}
+            repeat={Infinity}
+          />
           <p>Passionate about crafting dynamic, high-performance web solutions. Focused on creating seamless user experiences, optimized systems, and impactful digital products</p>
           <a href={cv} download="Rupe_CV.pdf">
             <button>Download CV</button>

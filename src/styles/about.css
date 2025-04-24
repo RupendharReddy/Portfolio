@@ -51,7 +51,7 @@
     font-weight: bold;
     color: transparent;
     display: inline-block;
-    margin-bottom: 40px;
+    /* margin-bottom: 0px; */
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1); /* light white outline */
     /* text-stroke: 1px rgba(255, 255, 255, 0.1); */
     letter-spacing: 10px;
