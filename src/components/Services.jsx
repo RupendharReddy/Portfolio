@@ -4,39 +4,52 @@ import {
   DeploymentUnitOutlined,
   MobileOutlined,
   CloudServerOutlined,
+  RiseOutlined,
+  UserOutlined,
 } from "@ant-design/icons";
 
 const { Title, Paragraph } = Typography;
 
 const serviceData = [
   {
-    icon: <CodeOutlined style={{ fontSize: "36px", color: "#1890ff" }} />,
-    title: "Web Development",
-    description: "Modern websites with responsive design using React, Node.js, and more.",
+    icon: <CodeOutlined style={{ fontSize: "36px", color: "yellow" }} />,
+    title: "Full-Stack Development",
+    description: "End-to-end solutions, from front-end to back-end, including APIs and databases.",
   },
   {
-    icon: <MobileOutlined style={{ fontSize: "36px", color: "#52c41a" }} />,
-    title: "Mobile Design",
-    description: "Mobile-first designs that look stunning on all screen sizes.",
+    icon: <MobileOutlined style={{ fontSize: "36px", color: "#eb2f96" }} />,
+    title: "Responsive Design",
+    description: "Beautiful, mobile-first designs that provide seamless experiences across all devices.",
   },
   {
-    icon: <DeploymentUnitOutlined style={{ fontSize: "36px", color: "#eb2f96" }} />,
-    title: "UI/UX Design",
-    description: "Clean and intuitive user interfaces tailored to your audience.",
+    icon: <RiseOutlined style={{ fontSize: "36px", color: "lightgreen" }} />,
+    title: "Commercial Websites",
+    description: "Scale up your business with business websites that are clean, fast, and easy to navigate.",
+  },
+  {
+    icon: <UserOutlined style={{ fontSize: "36px", color: "#1890ff" }} />,
+    title: "Personal Websites",
+    description: "Personal websites that reflect your unique style and personality.",
   },
   {
     icon: <CloudServerOutlined style={{ fontSize: "36px", color: "#faad14" }} />,
     title: "Backend & APIs",
-    description: "Robust backend services with Express.js, MongoDB, and authentication.",
+    description: "Robust backend services with Express.js, MongoDB, and powerful APIs.",
+  },
+  {
+    icon: <DeploymentUnitOutlined style={{ fontSize: "36px", color: "brown" }} />,
+    title: "Feature Additions",
+    description: "Enhance your existing website with new features and improved functionality.",
   },
 ];
 
+
 const Services = () => {
   return (
-    <section id="services" style={{ padding: "100px 20px", backgroundColor: "#001529" }}>
+    <section id="services" style={{ padding: "100px 20px", backgroundColor: "#001529" ,marginTop:"0px"}}>
       <div style={{ textAlign: "center", marginBottom: "60px", color: "#fff" }}>
-        <Title style={{ color: "#fff" }}>Services</Title>
-        <Paragraph style={{ color: "#d9d9d9" }}>Things I can help you with...</Paragraph>
+        <Title style={{ color: "#fff" ,fontSize:"50px" ,marginTop:"-30px"}}>SERVICES OFFERED</Title>
+        <h3 style={{ color: "#d9d9d9" }}>Things I can help you with...</h3>
       </div>
 
       <Row gutter={[24, 24]} justify="center">
@@ -55,14 +68,14 @@ const Services = () => {
               style={{
                 width: 260,
                 textAlign: "center",
-                backgroundColor: "#ffffff",
+                backgroundColor: "#001e35",
                 borderRadius: 12,
               }}
               hoverable
             >
               <div style={{ marginBottom: 16 }}>{service.icon}</div>
-              <Title level={4}>{service.title}</Title>
-              <Paragraph>{service.description}</Paragraph>
+              <Title level={4} style={{ color: "#fff" }}>{service.title}</Title>
+              <Paragraph style={{ color: "#d9d9d9" }}>{service.description}</Paragraph>
             </Card>
           </Col>
         ))}

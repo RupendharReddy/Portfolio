@@ -7,6 +7,8 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Certificates from './components/Certificates';
 import Services from './components/Services';
+
+import ScreenWarningPopup from './components/ScreenWarningPopup';
 import './App.css'
 
 
@@ -16,6 +18,7 @@ function App() {
     <>
       <div>
         {/* <Landing/> */}
+        <ScreenWarningPopup />
         <Navbar />
         <Hero />
         <About />

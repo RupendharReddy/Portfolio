@@ -11,7 +11,7 @@ const { Title, Paragraph } = Typography;
 
 const Hero = () => {
   return (
-    <section id="hero" style={{ padding: "100px 0px 100px 20px", backgroundColor: "#001529" }}>
+    <section id="hero" style={{ padding: "100px 0px 60px 10px", backgroundColor: "#001529" }}>
       <div class="placeholder">
         <h5>R<br />u<br />p<br />e</h5>
       </div>
@@ -34,7 +34,8 @@ const Hero = () => {
             ]}
             wrapper="span"
             speed={50}
-            style={{ fontSize: '2em', display: 'inline-block' }}
+            className="typed-text"
+            style={{ display: 'inline-block' }}
             repeat={Infinity}
           />
           <p>Passionate about crafting dynamic, high-performance web solutions. Focused on creating seamless user experiences, optimized systems, and impactful digital products</p>
@@ -47,7 +48,7 @@ const Hero = () => {
           <div className="imgdiv2">
             <img src={rupe} alt="Rupe"/>
           </div>
-          <div className="social_links">
+          {/* <div className="social_links"> */}
           <div className="social_links">
             <a href="https://www.linkedin.com/in/rupendhar-reddy-varugu-390a53263/" target="_blank" rel="noopener noreferrer">
               <LinkedinOutlined className="link" />
@@ -61,7 +62,7 @@ const Hero = () => {
             <a href="#" target="_blank" rel="noopener noreferrer">
               <DiscordOutlined className="link" />
             </a>
-          </div>
+          {/* </div> */}
           </div>
         </div>
       </div>

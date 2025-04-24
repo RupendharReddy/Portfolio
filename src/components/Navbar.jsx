@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const menuItems = [
     { key: "hero", label: "HOME" },
-    { key: "about", label: "ABOUT ME" },
+    { key: "about", label: "ABOUT_ME" },
     { key: "projects", label: "PROJECTS" },
     { key: "certificates", label: "CERTIFICATES" },
     { key: "services", label: "SERVICES" },
