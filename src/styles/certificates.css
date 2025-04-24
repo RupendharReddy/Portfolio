@@ -56,3 +56,27 @@
     /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
   }
   
+  /* @media (max-width: 768px) {
+    .outlined-text-project {
+      font-size: 40px;
+      letter-spacing: 5px;
+    }
+  
+    .title {
+      font-size: 24px;
+      margin-top: 10px;
+    }
+  
+    .certificate-slide {
+      height: auto;
+      max-width: 100%;
+      padding: 10px;
+    }
+  
+    .certificate-iframe {
+      height: auto;
+      width: 100%;
+      padding-left: 0;
+    }
+  } */
+  
