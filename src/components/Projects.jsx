@@ -25,7 +25,7 @@ const Projects = () => {
         "CSS",
         "Chart.js",
       ],
-      github: "https://github.com/RupendharReddy/Placement-System",
+      Github: "https://github.com/RupendharReddy/Placement-System",
       videoUrl:
         "https://drive.google.com/file/d/1YZjyf6AaR6uxykm8T6-LweXOYy1W84tc/preview",
     },
@@ -70,7 +70,7 @@ const Projects = () => {
   ]);
 
   return (
-    <section id="projects" style={{ padding: "80px 20px" }}>
+    <section id="projects" >
       <h1 className="outlined-text-project">PROJECTS</h1>
       <h1 className="title">
         <b>- </b>MY PROJECTS <b>-</b>
@@ -80,7 +80,7 @@ const Projects = () => {
           <Card key={idx} id="project-card" bordered={false}>
             <div className="project-content">
               <div className="project-left">
-                <Title level={3} style={{ color: "white",textTransform:"uppercase" }}><b style={{color:"red"}}>- </b>{project.title} <b style={{color:"red"}}>-</b></Title>
+                <Title level={3} style={{ color: "white",textTransform:"uppercase" ,overflow:"hidden"}}><b style={{color:"red"}}>- </b>{project.title} <b style={{color:"red"}}>-</b></Title>
                 <p>{project.description}</p>
                 <ul className="feature-list">
                   {project.features.map((item, index) => (
@@ -97,9 +97,7 @@ const Projects = () => {
                     ))}
                   </div>
                 </div>
-                <div className="buttons">
-                  <button className="github-btn" onClick={() => window.open(project.github, "_blank")}>GitHub</button>
-                </div>
+                
               </div>
               {project.videoUrl && (
                 <div className="project-right">
@@ -112,6 +110,9 @@ const Projects = () => {
                         allowFullScreen
                       ></iframe>
                     </div>
+                  </div>
+                  <div className="buttons">
+                    <button className="github-btn" onClick={() => window.open(project.github, "_blank")}>GitHub</button>
                   </div>
                 </div>
               )}

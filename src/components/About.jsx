@@ -8,7 +8,7 @@ const { Title, Paragraph, Text } = Typography;
 
 const About = () => {
   const skills = [
-    "React.js", "Node.js", "Express.js", "MySql", "MongoDB","MVC",
+    "React.js", "Node.js", "Express.js", "MySql", "MongoDB","MVC - Architecture",
     "HTML", "CSS", "JavaScript", "Antd",
     "Python", "C", "Java", "Go lang", "Git", "AI tools"
   ];
@@ -23,7 +23,7 @@ const About = () => {
         </div>
         <div className="about-content">
           <h1>About Me</h1>
-          <p>
+          <p id="info">
             Hello, my name is Rupendhar Reddy Varugu and i am a full-stack developer
           </p>
           <p className="about-paragraph">

@@ -3,6 +3,10 @@
     background-color: #001529;
     /* width: 100%; */
 }
+#info{
+    text-align: justify;
+    text-justify:newspaper;
+}
 .container{
     display: flex;
     justify-content:space-between;
@@ -21,6 +25,7 @@
     .placeholder h5 {
       -webkit-text-stroke-width: 2px;
       -webkit-text-stroke-color: #fff;
+      /* font-size: 100px; */
       font-size: 7vw;
       color: transparent;
       margin: 0;
@@ -35,9 +40,11 @@
     /* border: 2px solid red; */
     color: white;
     padding-left: 8%;
+    /* padding-right: 5%; */
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     /* align-items: center; */
 }
 .imgdiv{
@@ -102,12 +109,12 @@
   
 .content p{
     /* margin-bottom:% ; */
-    /* max-width: 550px; */
+    max-width: 650px;
     line-height: 30px;
     color: #99a2a9;
 }
 #name{
-    font-size:50px;
+    font-size:45px;
     /* border: 2px solid red; */
     margin-bottom: 1%;
     margin-top: 0%;
@@ -130,6 +137,9 @@
 .content a button:hover{
     background-color: red;
     color: white;
+}
+.typed-text{
+    font-size: 40px ;
 }
 
 /* @media screen and (min-width: 375px) and (min-width: 425px){
@@ -233,6 +243,7 @@
         z-index: 0;
         margin-right: 0;
         margin-left:10%;
+        margin-bottom: 30px;
         padding-left: 0px;
     }
     .imgdiv2{
@@ -264,6 +275,7 @@
         /* overflow-y: hidden; */
         /* content: none; */
         /* margin-top: 45vh; */
+        /* padding: 10px; */
         font-size: 13px;
     }
     #name{
@@ -275,6 +287,8 @@
     .content h5{
         border: 2px solid red;
         width: 50px;
+        /* padding-left:10px ; */
+        /* margin-left: 6px; */
         /* margin-top: 0%; */
         /* height: 50px; */
         border: 0px 0px 4px 0px ;
@@ -285,7 +299,7 @@
         font-size: 9px;
     }
     .typed-text{
-        font-size: 5px !important;
+        font-size: 20px ;
     }
 
 }
@@ -371,6 +385,7 @@
     .content h5{
         border: 2px solid red;
         width: 50px;
+        /* font-size: 30px; */
         /* margin-top: 0%; */
         /* height: 50px; */
         border: 0px 0px 4px 0px ;
@@ -379,94 +394,13 @@
         height: 25px;
         width: 75px;
         font-size: 9px;
+    }
+    .typed-text{
+        font-size: 20px ;
     }
 
 }
-@media screen and (min-width: 431px) and (max-width: 769px){
-    #hero{
-        overflow: hidden;
-    }
-    .placeholder{
-        display: none;
-        /* margin-top: 120px; */
-
-    }
-    /* .placeholder h5{
-        -webkit-text-stroke-width: 1.7px;
-        font-size: 8vw;
-        letter-spacing: 0.1rem;
-        line-height: 1.1;
-    } */
-    .social_links  a{
-        /* margin-right: 20px; */
-    }
-    .container{
-        flex-direction: column-reverse;
-        /* justify-content: center;
-        align-items: center; */
-    }
-    .imgdiv{
-        position: relative;
-        width: 300px;
-        height: 39vh;
-        border: 5px solid red;
-        border-right: 0px;
-        /* background-color: #001529; */
-        /* background-color:brown; */
-        border-radius: 45% 0% 0% 45% ;
-        z-index: 0;
-        margin-right: 0;
-        margin-left:28%;
-        padding-left: 0px;
-    }
-    .imgdiv2{
-        position: absolute;
-        width:100%;
-        /* z-index: 2; */
-        /* border-radius: 50% 50% 0% 50% ; */
-        padding: 6% 0% 6% 0%;
-    }
-    .imgdiv2 img{
-        width: 170px;
-        height: 190px;
-        margin-left: 30px;
-        /* padding-left: 50px; */
-        border: 5px solid rgb(224, 216, 216);
-        /* border: 100px; */
-        border-radius: 50% 50% 45% 50% ;
-    }
-    .link{
-        padding: 7px;
-        width: 25px;
-        /* font-size: 2px; */
-    }
-    .social_links a{
-        margin-right: 0px;
-        margin-left: 240px;
-    }
-    .content{
-        /* overflow-y: hidden; */
-        /* content: none; */
-        /* margin-top: 45vh; */
-        font-size: 13px;
-    }
-    #name{
-        font-size: 20px;
-    }
-    .content{
-        width: 83%;
-    }
-    .content h5{
-        border: 2px solid red;
-        width: 50px;
-        /* margin-top: 0%; */
-        /* height: 50px; */
-        border: 0px 0px 4px 0px ;
-    }
-    .content a button{
-        height: 25px;
-        width: 75px;
-        font-size: 9px;
-    }
-
+/* @media screen and (min-width:431px) and (max-width: 769px){ */
+@media screen and (min-width: 1024px){
+    
 }

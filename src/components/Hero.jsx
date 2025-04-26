@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="container">
         <div className="content">
           <h1>Hi There, i'm</h1>
-          <h1 id="name">RUPENDHAR REDDY VARUGU</h1>
+          <h2 id="name">RUPENDHAR REDDY VARUGU</h2>
           <h5></h5>
           <TypeAnimation
             sequence={[
@@ -38,7 +38,7 @@ const Hero = () => {
             style={{ display: 'inline-block' }}
             repeat={Infinity}
           />
-          <p>Passionate about crafting dynamic, high-performance web solutions. Focused on creating seamless user experiences, optimized systems, and impactful digital products</p>
+          <p id="info">Passionate about crafting dynamic, high-performance web solutions. Focused on creating seamless user experiences, optimized systems, and impactful digital products</p>
           <a href={cv} download="Rupe_CV.pdf">
             <button>Download CV</button>
           </a>
