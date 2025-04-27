@@ -7,6 +7,7 @@ import {
   RiseOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import "../styles/services.css";
 
 const { Title, Paragraph } = Typography;
 
@@ -48,8 +49,8 @@ const Services = () => {
   return (
     <section id="services" style={{ padding: "100px 20px", backgroundColor: "#001529" ,marginTop:"0px"}}>
       <div style={{ textAlign: "center", marginBottom: "60px", color: "#fff" }}>
-        <Title style={{ color: "#fff" ,fontSize:"50px" ,marginTop:"-30px"}}>SERVICES OFFERED</Title>
-        <h3 style={{ color: "#d9d9d9" }}>Things I can help you with...</h3>
+        <Title style={{ color: "#fff"}} id="services-title" >SERVICES OFFERED</Title>
+        <h3 style={{ color: "#d9d9d9" }} id="service-info">Things I can help you with...</h3>
       </div>
 
       <Row gutter={[24, 24]} justify="center">

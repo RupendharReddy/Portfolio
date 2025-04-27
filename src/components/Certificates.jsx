@@ -9,7 +9,7 @@ import ProblemSolving from '../assets/Resume based Certificates/ProblemSolving.p
 import programming_in_java from '../assets/Resume based Certificates/programming_in_java.jpeg'
 
 import "../styles/certificates.css";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 
 // Google Drive embed links
 // const certificateEmbeds = [
@@ -38,37 +38,44 @@ const certificateEmbeds = [
 const Certificates = () => {
   return (
     <section id="certificates">
-      <h1 className="outlined-text-project">CERTIFICATES</h1>
+      <h1 className="outlined-text-certificates">CERTIFICATES</h1>
       <h1 className="title">
         <b>- </b>MY CERTIFICATES <b>-</b>
       </h1>
-
-      <Carousel autoplay dots style={{width:"50"}}>
-        {certificateEmbeds.map((link, index) => (
-          <div key={index} className="certificate-slide">
-            {/* <img src={link} alt="certificates"/> */}
-            {index==0?
+        <h>{/* the description of the certificates */}</h>
+        <Carousel autoplay dots style={{}}>
+          {certificateEmbeds.map((link, index) => (
+            <div key={index} className="certificate-slide">
               <img
-              src={link}
-              title={`Certificate ${index + 1}`}
-              className="certificate-iframe"
-              allow="autoplay"
-              frameBorder="0"
-              loading="lazy"
-              style={{paddingLeft:"27%",borderRadius:"0px"}}
-              />:
-              <img
+                  src={link}
+                  title={`Certificate ${index + 1}`}
+                  className="certificate-iframe"
+                  allow="autoplay"
+                  frameBorder="0"
+                  // loading="lazy"
+                />
+              {/* {index==0?
+                <img
                 src={link}
                 title={`Certificate ${index + 1}`}
                 className="certificate-iframe"
                 allow="autoplay"
                 frameBorder="0"
                 loading="lazy"
-              />
-            }
-          </div>
-        ))}
-      </Carousel>
+                // style={{paddingLeft:"27%",borderRadius:"0px"}}
+                />:
+                <img
+                  src={link}
+                  title={`Certificate ${index + 1}`}
+                  className="certificate-iframe"
+                  allow="autoplay"
+                  frameBorder="0"
+                  loading="lazy"
+                  />
+                  } */}
+            </div>
+          ))}
+        </Carousel>
     </section>
   );
 };
