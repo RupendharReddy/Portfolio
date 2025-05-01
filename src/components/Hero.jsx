@@ -2,7 +2,7 @@ import React from "react";
 import '../styles/hero.css'
 import rupe from '../assets/rupe.png'
 // import dotsbg from '../assets/dotsbg.png'
-import cv from '../../public/Rupe_CV.pdf'
+import cv from '../assets/Rupe_cv.pdf'
 import { Typography } from "antd";
 import { DiscordOutlined, GithubOutlined, LinkedinOutlined, MailOutlined } from "@ant-design/icons";
 import { TypeAnimation } from "react-type-animation";

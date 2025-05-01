@@ -1,0 +1,27 @@
+
+@media screen and (max-width: 768px) {
+    *{
+        overflow-x: hidden;
+    }    
+    .float-button{
+        width: 40px;
+        height: 40px;
+        bottom: 30px;
+        opacity: 0.8;
+    }
+
+}
+
+@media screen and (min-width: 769px) {
+    .float-button{
+        width: 40px;
+        height: 40px;
+        /* bottom: 30px; */
+        opacity: 0.8;
+    }
+    .float-button:hover{
+        /* opacity: 1; */
+        background-color: red;
+    }
+    
+}

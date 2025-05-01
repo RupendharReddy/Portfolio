@@ -1,54 +1,40 @@
-// import { useState } from 'react'
-import Landing from './components/landing'
-import Navbar from './components/Navbar'
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Certificates from './components/Certificates';
-import Services from './components/Services';
-
-import ScreenWarningPopup from './components/ScreenWarningPopup';
-import './App.css'
-// import { useEffect, useState } from 'react';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import AdminDashboard from './pages/AdminDashboard';
+import MessagePage from './pages/MessagePage';
+import AdminLogin from './pages/AdminLogin';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
-  // const [location, setLocation] = useState({ latitude: 0, longitude: 0 });
-    
-  // useEffect(() => {
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.getCurrentPosition(
-  //       (position) => {
-  //         setLocation({
-  //           latitude: position.coords.latitude,
-  //           longitude: position.coords.longitude,
-  //         });
-  //       },
-  //       (error) => {
-  //         console.error('Error getting location:', error);
-  //       }
-  //     );
-  //   } else {
-  //     console.error('Geolocation is not supported by this browser.');
-  //   }
-  // }, []);
   return (
-    <>
-      <div>
-        {/* <Landing/> */}
-        <ScreenWarningPopup />
-        <Navbar />
-        <Hero />
-        <About />
-        <Projects />
-        <Certificates />
-        <Services />
-        <Contact />
-        {/* <MapComponent latitude={location.latitude} longitude={location.longitude} /> */}
-      </div>
-    </>
-  )
+    <Router>
+      <Routes>
+        {/* Public Route */}
+        <Route path="/" element={<HomePage />} />
+
+        {/* Admin Login */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+
+        {/* Protected Admin Routes */}
+        <Route
+          path="/admin/dashboard"
+          element={
+            <PrivateRoute>
+              <AdminDashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/admin/messages"
+          element={
+            <PrivateRoute>
+              <MessagePage />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

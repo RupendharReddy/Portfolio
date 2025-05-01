@@ -43,7 +43,7 @@ const Certificates = () => {
         <b>- </b>MY CERTIFICATES <b>-</b>
       </h1>
         <h>{/* the description of the certificates */}</h>
-        <Carousel autoplay dots style={{}}>
+        <Carousel autoplay autoplaySpeed={1500} dots>
           {certificateEmbeds.map((link, index) => (
             <div key={index} className="certificate-slide">
               <img

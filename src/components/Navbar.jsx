@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MenuOutlined } from "@ant-design/icons";
+import { LoginOutlined, MenuOutlined } from "@ant-design/icons";
 import { Drawer, Button } from "antd";
 import { Link as ScrollLink } from "react-scroll";
 import "../styles/navbar.css";
@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const menuItems = [
     { key: "hero", label: "HOME" },
-    { key: "about", label: "ABOUT_ME" },
+    { key: "about", label: "ABOUT ME" },
     { key: "projects", label: "PROJECTS" },
     { key: "certificates", label: "CERTIFICATES" },
     { key: "services", label: "SERVICES" },
@@ -41,6 +41,7 @@ const Navbar = () => {
             {renderLink(key, label)}
           </div>
         ))}
+        < LoginOutlined style={{ fontSize: 24}} onClick={() => window.open('/admin/login', '_blank')} />
       </div>
 
       <div className="mobile-menu-icon">
@@ -66,6 +67,7 @@ const Navbar = () => {
             </div>
           ))}
         </div>
+        < LoginOutlined onClick={() => window.open('/admin/login', '_blank')} />
       </Drawer>
     </div>
   );
