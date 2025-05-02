@@ -101,6 +101,21 @@
   color: #d4e0f0;
 } */
 
+#charts-div{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items: center;
+}
+.chart{
+  display: none;
+  display: flex;
+  flex-direction: column;
+}
+.barchart{
+  
+}
+
 @media screen and (min-width: 320px) and (max-width:376px){
   #about{
     /* background-color:#99a2a9; */
@@ -178,7 +193,9 @@
   .edu h1{
     margin-top: 15px;
   }
-  
+  #charts-div{
+    flex-direction:column-reverse;
+  }
 
 }
 @media screen and (min-width: 376px) and (max-width:431px){
@@ -258,7 +275,9 @@
   .edu h1{
     margin-top: 15px;
   }
-  
+  #charts-div{
+    flex-direction: column-reverse;
+  }
 }
 @media screen and (min-width: 431px) and (max-width:769px){
   #about{
@@ -339,6 +358,8 @@
   .edu h1{
     margin-top: 15px;
   }
-  
+  #charts-div{
+    flex-direction: column;
+  }
 
 }

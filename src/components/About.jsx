@@ -3,6 +3,9 @@ import { Typography } from "antd";
 import "../styles/about.css";
 import about from "../assets/about.png";
 import aboutBG from "../assets/aboutBG.png";
+import BarChartComponent from "./charts/bar";
+import RoseChart from "./charts/rosechart";
+import PolarAreaChart from "./charts/polar";
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -44,9 +47,21 @@ const About = () => {
             <p>Higher Secondary Schooling</p>
             <p className="about-paragraph">Sri Chaitanya junior college - 719 (2019-2021)</p>
             <p>Bachelor of Engineering in Computer Science</p>
-            <p className="about-paragraph">R.M.D Engineering College - 7.72 CGPA up to 7th sem (2021-2025)</p>
+            <p className="about-paragraph">R.M.D Engineering College - 7.78 CGPA (2021-2025)</p>
           </div>
         </div>
+      </div>
+      <div id="charts-div">
+        <div className="chart">
+          
+          <BarChartComponent/>
+        </div>
+        <div className="chart">
+          <RoseChart/>
+        </div>
+        {/* <>
+          <PolarAreaChart/>
+        </> */}
       </div>
     </section>
   );
