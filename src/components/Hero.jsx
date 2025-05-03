@@ -24,9 +24,9 @@ const Hero = () => {
             sequence={[
               // Same substring at the start will only be typed out once, initially
               'Full Stack Developer',
-              1000, // wait 1s before replacing "Mice" with "Hamsters"
+              1200, // wait 1s before replacing "Mice" with "Hamsters"
               'Software Developer',
-              1000,
+              1200,
               // 'Frontend Developer',
               // 1000,
               // 'Backend Developer',
@@ -34,6 +34,7 @@ const Hero = () => {
             ]}
             wrapper="span"
             speed={50}
+            // deletionSpeed={3}
             className="typed-text"
             style={{ display: 'inline-block' }}
             repeat={Infinity}
