@@ -23,25 +23,26 @@ const Contact = () => {
 
   return (
     <section id="contact" className="contact-section">
-      <Title level={2} className="contact-title">Contact Me</Title>
-
+      <div style={{ textAlign: "center", marginBottom: "60px", color: "#fff" }}>
+        <Title style={{ color: "#fff"}} id="services-title" ><b style={{ color: "red" }}>- </b>CONTACT ME<b style={{ color: "red" }}> -</b></Title>
+      </div>
       <div className="contact-container">
 
         {/* Contact Info */}
         <div className="contact-info">
-          <Title level={2} className="contact-info-title">Get in Touch</Title>
+          <h1>Get in Touch</h1>
           <Paragraph className="contact-info-desc">
             Feel free to reach out to me via any of the following ways:
           </Paragraph>
 
           <div className="contact-item">
             <EnvironmentOutlined className="contact-icon" />
-            <span>Bangalore, India</span>
+            <span>Willing to relocate to Hyderabad, Chennai, Bangalore, India</span>
           </div>
 
           <div className="contact-item">
             <MailOutlined className="contact-icon" />
-            <span>your-email@example.com</span>
+            <span>varugurupendharreddy@gmail.com</span>
           </div>
 
           <div className="contact-item">

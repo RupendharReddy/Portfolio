@@ -1,6 +1,7 @@
 .message-page-container {
     display: flex;
     height: calc(100vh - 64px);
+    margin-top: 64px;
   }
   
   .message-list {

@@ -2,37 +2,38 @@ import React, { useEffect } from 'react';
 import '../styles/dashboard.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchVisitorStats } from '../store/actions/visitorActions';
-import { Line, Bar } from 'react-chartjs-2';
+import { Line, Bar, Pie, Doughnut } from 'react-chartjs-2';
 import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    LineElement,
-    PointElement,
-    Title,
-    Tooltip,
-    Legend,
-    Filler
-  } from 'chart.js';
-import MessagePage from './MessagePage';
-import Navbar from '../components/Navbar';
-import MessagePage2 from './MessagePage2';
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  LineElement,
+  PointElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler,
+  ArcElement,
+} from 'chart.js';;
 import { Button } from 'antd';
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
 import { LogoutOutlined } from '@ant-design/icons';
+import { fetchMessages } from '../store/actions/contactActions';
   
-  ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    LineElement,
-    PointElement,
-    Title,
-    Tooltip,
-    Legend,
-    Filler 
-  );
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  LineElement,
+  PointElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler,
+  ArcElement
+);
+
   
 // Register ChartJS components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
@@ -40,9 +41,11 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 const AdminDashboard = () => {
   const dispatch = useDispatch();
   const { stats, status, error } = useSelector((state) => state.visitor);
+  const { messages } = useSelector((state) => state.contact);
 
   useEffect(() => {
     dispatch(fetchVisitorStats());
+    dispatch(fetchMessages()); // 👈 Fetch messages here too
   }, [dispatch]);
 
   // For testing: use static data if API data isn't available
@@ -80,6 +83,23 @@ const AdminDashboard = () => {
     ],
   };
 
+  
+  // Pie chart data for visitors who sent messages vs. not
+  const messageCount = messages?.length || 0;
+  const noMessageCount = stats.total - messageCount;
+  console.log(messageCount, noMessageCount);
+  const messagePieData = {
+    labels: ['Messages sent by visitors', 'Not sent by visitors'],
+    datasets: [
+      {
+        data: [messageCount, noMessageCount],
+        backgroundColor: ['#FF6384', '#FFCE56'],
+        hoverBackgroundColor: ['#FF6384', '#FFCE56'],
+      },
+    ],
+  };
+
+
   return (
     <div id='Analytics'>
       <div id='admin-nav'>
@@ -93,8 +113,12 @@ const AdminDashboard = () => {
         }} ghost style={{marginLeft:"50px"}}>Logout</Button>
         </div>
       </div>
-        <h2>Visitor Statistics</h2>
-        <p>Total Visitors: {stats.total}</p>
+      {/* ..... body ..... */}
+      <div className='analytics-body'>
+        <div className='visitor-stats'>
+          <h2>Visitor Statistics</h2>
+          <p>Total Visitors: {stats.total}</p>
+        </div>
         <div id='dashboard-charts'>
           <div className="chart-container">
             <h3>Visitors Per Day</h3>
@@ -105,6 +129,28 @@ const AdminDashboard = () => {
             <Bar data={totalVisitorData} options={{ responsive: true }} />
           </div>
         </div>
+        <div id='donut'>
+          <div className="donut-chart">
+            <div></div>
+            <h3>Message Distribution by Visitors</h3>
+            <Doughnut data={messagePieData}
+              options={{
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: {
+                    position: 'bottom',
+                    labels: {
+                      padding: 20, // 👈 Increase space between chart and legend
+                    },
+                  },
+                },
+              }}
+              height={600}/>
+
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

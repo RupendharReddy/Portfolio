@@ -1,7 +1,7 @@
 #Analytics{
     background-color: #001e35;
-    height:100vh ;
-    padding-top:64px ;
+    height:100% ;
+    padding-top:74px ;
 }
 #admin-nav{
     width: 100vw;
@@ -34,16 +34,59 @@
 #admin-nav #active{
     color: white;
 }
-#dashboard-charts {
+
+
+
+.visitor-stats{
     display: flex;
     justify-content: center;
     /* gap: 20px; */
     align-items: center;
+    align-content: center;
+    flex-direction: column;
+    /* background-color: #001e35; */
+    /* border: 2px solid red; */
+}
+
+#dashboard-charts ,#donut{
+    height: 70vh;
+    
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    align-items: center;
     /* align-content: center; */
     flex-direction: row;
-    background-color: #001e35;
+    /* background-color: #001e35; */
+    /* border: 2px solid yellow; */
 }
-.chart-container {
+.chart-container , .donut-chart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     /* border: 2px solid red; */
-    width: 50%;
+    width: 35%;
+    padding: 40px;
+    /* height: ; */
+    background-color: #001529;
+    /* border: 1px red solid; */
+    border-radius: 14px;
+}
+.analytics-body{
+    /* height: 100vh; */
+}
+.analytics-body {
+    color : white;
+}
+.analytics-body p{
+    color: #99a2a9;
+}
+.donut-chart{
+    width: 85%;
+    height: 75%;
+    padding-top: 40px;
+}
+#donut{
+    height: 80vh;
 }

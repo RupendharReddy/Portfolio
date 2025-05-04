@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchMessages, sendReply, markAsSeen } from '../store/actions/contactActions';
 import { List, Badge, Typography, Button, Input, message as antdMessage } from 'antd';
 import '../styles/messagePage.css';
+import { LogoutOutlined } from '@ant-design/icons';
 
 const { TextArea } = Input;
 const { Title, Paragraph } = Typography;
@@ -24,13 +25,6 @@ const MessagePage2 = () => {
     }
   };
 
-//   const handleSendReply = () => {
-//     if (selectedMessage && replyText.trim()) {
-//       dispatch(sendReply(selectedMessage._id, replyText));
-//       setReplyText('');
-//       antdMessage.success("Reply sent!");
-//     }
-//   };
 const handleSendReply = async () => {
     if (selectedMessage && replyText.trim()) {
       try {
@@ -52,9 +46,23 @@ const handleSendReply = async () => {
 
   return (
     <div className="message-page-container">
-      {/* Left - Message List */}
+        {/* ..... navbar for admin dashboard css is used from dashboard.css file  */}
+      <div id='admin-nav'>
+        <h2>Admin Dashboard</h2>
+        <div id='admin-options'>
+          <a href="/admin/dashboard"><h3>Analytics</h3></a>
+          <h3 id='active'>Messages</h3>
+        <Button type="primary" icon={<LogoutOutlined />} onClick={() => {
+            localStorage.removeItem('token');
+            window.location.reload();
+        }} ghost style={{marginLeft:"50px"}}>Logout</Button>
+        </div>
+      </div>
+      {/* ..... End of the navbar ....... */}
+
+        {/* Left - Message List */}
       <div className="message-list">
-        <Title level={4}>Messages</Title>
+        <Title level={3}>--- Messages ---</Title>
         <List
           itemLayout="horizontal"
           dataSource={sortedMessages}
