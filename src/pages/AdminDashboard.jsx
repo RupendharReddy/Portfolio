@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import '../styles/dashboard.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchVisitorStats } from '../store/actions/visitorActions';
 import { Line, Bar } from 'react-chartjs-2';
@@ -16,6 +17,10 @@ import {
   } from 'chart.js';
 import MessagePage from './MessagePage';
 import Navbar from '../components/Navbar';
+import MessagePage2 from './MessagePage2';
+import { Button } from 'antd';
+import { Navigate } from 'react-router-dom';
+import { LogoutOutlined } from '@ant-design/icons';
   
   ChartJS.register(
     CategoryScale,
@@ -37,7 +42,6 @@ const AdminDashboard = () => {
   const { stats, status, error } = useSelector((state) => state.visitor);
 
   useEffect(() => {
-    // window.localStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTBlNmFlMjcxYzlhMzdmYWMxMjcyMyIsImlhdCI6MTc0NjA3NzM5MCwiZXhwIjoxNzQ2MDgwOTkwfQ.PMmDH9Hs31SIk7oY7R3Tdys36aK1owG87UxOXyH6oYw');
     dispatch(fetchVisitorStats());
   }, [dispatch]);
 
@@ -77,21 +81,30 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div>
-        <Navbar/>
-      <h2>Visitor Statistics</h2>
-      <p>Total Visitors: {stats.total}</p>
-
-      <div className="chart-container">
-        <h3>Visitors Per Day</h3>
-        <Line data={dayWiseData} options={{ responsive: true }} />
+    <div id='Analytics'>
+      <div id='admin-nav'>
+        <h2>Admin Dashboard</h2>
+        <div id='admin-options'>
+          <h3 id='active'>Analytics</h3>
+          <a href="/admin/messages"><h3>Messages</h3></a>
+        <Button type="primary" icon={<LogoutOutlined />} onClick={() => {
+          localStorage.removeItem('token');
+          window.location.reload();
+        }} ghost style={{marginLeft:"50px"}}>Logout</Button>
+        </div>
       </div>
-
-      <div className="chart-container">
-        <h3>Total Visitors Over Time</h3>
-        <Bar data={totalVisitorData} options={{ responsive: true }} />
-      </div>
-      <MessagePage/>
+        <h2>Visitor Statistics</h2>
+        <p>Total Visitors: {stats.total}</p>
+        <div id='dashboard-charts'>
+          <div className="chart-container">
+            <h3>Visitors Per Day</h3>
+            <Line data={dayWiseData} options={{ responsive: true }} />
+          </div>
+          <div className="chart-container">
+            <h3>Total Visitors Over Time</h3>
+            <Bar data={totalVisitorData} options={{ responsive: true }} />
+          </div>
+        </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
 }
-.container{
+.login-container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@
     background-color: #001e35;
 }
 
-.first-div,.second-div{
+.div1,.div2{
     /* border: 2px solid red; */
     /* width: 50%; */
     height: 80vh;
@@ -25,13 +25,34 @@
     justify-content: center;
     align-items: center
 }
-.first-div{
+.div1{
     width: 60%;
+    /* padding-right: 40px; */
+    padding-left: 0%;
     /* border: 2px solid green; */
+    /* padding: 50px; */
 }
-.second-div {
+.div1 img{
+    /* width: 60%; */
+    height: 100%;
+}
+.image-div,.typer-div{
     width: 40%;
-    border: 2px solid green;
+    /* border: 2px solid green; */
+    /* height: 60%; */
+}
+.image-div{
+    height: 60%;
+    width: 40%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    /* left: 0; */
+    /* right: 0; */
+}
+.div2 {
+    width: 50%;
+    /* border: 2px solid green; */
     display: flex;
     /* justify-self: start; */
     align-items: center;

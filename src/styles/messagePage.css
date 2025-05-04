@@ -1,0 +1,33 @@
+.message-page-container {
+    display: flex;
+    height: calc(100vh - 64px);
+  }
+  
+  .message-list {
+    width: 30%;
+    border-right: 1px solid #eee;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #fafafa;
+  }
+  
+  .message-detail {
+    width: 70%;
+    padding: 2rem;
+    overflow-y: auto;
+  }
+  
+  .message-item {
+    cursor: pointer;
+    padding: 0.5rem 0;
+    transition: background-color 0.2s ease;
+  }
+  
+  .message-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .message-item.active {
+    background-color: #e6f7ff;
+  }
+  

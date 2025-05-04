@@ -1,29 +1,33 @@
 import React from "react";
 import { Form, Input, Button, Typography, message } from "antd";
 import { MailOutlined, PhoneOutlined, EnvironmentOutlined } from '@ant-design/icons';
-
-import "../styles/contact.css"; // Import external CSS
+import { useDispatch } from "react-redux";
+import { submitContactForm } from "../store/actions/contactActions";
+import "../styles/contact.css";
 
 const { Title, Paragraph } = Typography;
 
 const Contact = () => {
   const [form] = Form.useForm();
+  const dispatch = useDispatch();
 
-  const handleFinish = (values) => {
-    console.log("Form values:", values);
-    message.success("Message sent successfully!");
-    form.resetFields();
+  const handleFinish = async (values) => {
+    try {
+      await dispatch(submitContactForm(values));
+      message.success("Message sent successfully!");
+      form.resetFields();
+    } catch (error) {
+      message.error("Something went wrong to send the message. Please try again.", error);
+    }
   };
 
   return (
     <section id="contact" className="contact-section">
-      <Title level={2} className="contact-title">
-        Contact Me
-      </Title>
+      <Title level={2} className="contact-title">Contact Me</Title>
 
       <div className="contact-container">
-        
-        {/* Contact Information */}
+
+        {/* Contact Info */}
         <div className="contact-info">
           <Title level={2} className="contact-info-title">Get in Touch</Title>
           <Paragraph className="contact-info-desc">

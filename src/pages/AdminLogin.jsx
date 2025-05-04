@@ -4,7 +4,10 @@ import { login } from '../store/actions/authActions';
 import { useNavigate } from 'react-router-dom';
 import verifyToken from '../utils/verifyToken';
 import '../styles/login.css';
-import { Button ,notification, Space } from 'antd';
+import admin1 from '../assets/admin1.png';
+import admin2 from '../assets/admin2.png';
+import { Button, notification, Space } from 'antd';
+import { TypeAnimation } from 'react-type-animation';
 
 const AdminLogin = () => {
   const dispatch = useDispatch();
@@ -15,15 +18,18 @@ const AdminLogin = () => {
   const [password, setPassword] = useState('');
 
   const [api, contextHolder] = notification.useNotification();
-  const openNotification = pauseOnHover => () => {
-    api.open({
-      message: 'Notification Title',
-      description:
-        'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
-      showProgress: true,
-      pauseOnHover,
+  const openNotification = (placement = 'topRight') => {
+    api.error({
+      message: 'Login Failed',
+      description: error || 'Invalid admin credentials',
+      placement,
     });
-  }
+  };
+  useEffect(() => {
+    if (error) {
+      openNotification('topRight');
+    }
+  }, [error]);
 
   useEffect(() => {
     const checkToken = async () => {
@@ -47,16 +53,31 @@ const AdminLogin = () => {
   return (
     <div id='login-page'>
       {contextHolder}
-      <div className="container">
-        <div className='first-div'>
-          <p>Please login to continue</p>
+      <div className="login-container">
+        <div className='div1'>
+          <div className='image-div'>
+            {error?<img src={admin2} alt="image for admin" />:<img src={admin1} alt="image for admin" id='admin1-img'/>}
+          </div>
+          <div className='typer-div'>
+            <TypeAnimation
+              key={error ? 'error' : 'no-error'}  // force re-render on condition change
+              sequence={[error ? 'Are you really admin? only admin can login' : 'Hi, Admin welcome back', 1200]}
+              wrapper="h6"
+              cursor={false}
+              speed={50}
+              className="typed-text"
+              style={{ display: 'inline-block' ,fontSize:'30px'}}
+              repeat={0}
+            />
+          </div>
+            
         </div>
-        <div className='second-div'>
-          <h2>Admin Login</h2>
+        <div className='div2'>
+          <h1>Admin Login</h1>
           {contextHolder}
           <Space>
-            {error && openNotification(true) }
-            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {/* {error && openNotification(true) } */}
+            {/* {error && <p style={{ color: 'red' }}>{error}</p>} */}
           </Space>
           <form onSubmit={handleSubmit} className="login-form">
             <input

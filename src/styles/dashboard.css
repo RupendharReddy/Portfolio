@@ -1,0 +1,49 @@
+#Analytics{
+    background-color: #001e35;
+    height:100vh ;
+    padding-top:64px ;
+}
+#admin-nav{
+    width: 100vw;
+    top: 0;
+    z-index: 1000;
+    position: fixed;
+    background-color: #001529;
+    color: white;
+    display: flex;;
+    align-items: center;
+    justify-content:space-around;
+    /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); */
+}
+#admin-options{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    /* align-content: center; */
+    flex-direction: row;
+}
+#admin-nav a{
+    color: #99a2a9;
+    text-decoration: none;
+    /* border-bottom:2px solid blue ; */
+}
+#admin-nav a:hover{
+    color: white;
+}
+#admin-nav #active{
+    color: white;
+}
+#dashboard-charts {
+    display: flex;
+    justify-content: center;
+    /* gap: 20px; */
+    align-items: center;
+    /* align-content: center; */
+    flex-direction: row;
+    background-color: #001e35;
+}
+.chart-container {
+    /* border: 2px solid red; */
+    width: 50%;
+}

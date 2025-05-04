@@ -4,6 +4,7 @@ import AdminDashboard from './pages/AdminDashboard';
 import MessagePage from './pages/MessagePage';
 import AdminLogin from './pages/AdminLogin';
 import PrivateRoute from './components/PrivateRoute';
+import MessagePage2 from './pages/MessagePage2';
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
           path="/admin/messages"
           element={
             <PrivateRoute>
-              <MessagePage />
+              {/* <MessagePage /> */}
+              <MessagePage2 />
             </PrivateRoute>
           }
         />
