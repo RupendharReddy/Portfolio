@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMessages, sendReply, markAsSeen } from '../store/actions/contactActions';
-import { List, Badge, Typography, Button, Input, message as antdMessage } from 'antd';
+import { List, Badge, Typography, Button, Input, notification } from 'antd';
 import '../styles/messagePage.css';
 import { LogoutOutlined } from '@ant-design/icons';
 
@@ -13,6 +13,7 @@ const MessagePage2 = () => {
   const { messages, status, error } = useSelector((state) => state.contact);
   const [selectedMessage, setSelectedMessage] = useState(null);
   const [replyText, setReplyText] = useState('');
+  const [api, contextHolder] = notification.useNotification();
 
   useEffect(() => {
     dispatch(fetchMessages());
@@ -25,18 +26,36 @@ const MessagePage2 = () => {
     }
   };
 
-const handleSendReply = async () => {
+  const handleSendReply = async () => {
     if (selectedMessage && replyText.trim()) {
       try {
         const updatedMessage = await dispatch(sendReply(selectedMessage._id, replyText));
-        antdMessage.success("Reply sent!");
-        setSelectedMessage(updatedMessage); // now it has latest replies
+
+        api.success({
+          message: "Reply Sent",
+          description: "Your reply was sent successfully via email.",
+          placement: "topRight",
+          duration: 3,
+        });
+
+        // Append new reply locally to UI
+        setSelectedMessage({
+          ...selectedMessage,
+          replies: [...(selectedMessage.replies || []), { text: replyText }]
+        });
+
         setReplyText('');
       } catch (error) {
-        antdMessage.error("Failed to send reply",error);
+        api.error({
+          message: "Reply Failed",
+          description: "Failed to send reply. Please try again or check your connection.",
+          placement: "topRight",
+          duration: 5,
+        });
       }
     }
   };
+
   const sortedMessages = [...messages].sort(
     (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
   );
@@ -46,21 +65,30 @@ const handleSendReply = async () => {
 
   return (
     <div className="message-page-container">
-        {/* ..... navbar for admin dashboard css is used from dashboard.css file  */}
+      {contextHolder}
+
+      {/* Admin Navbar */}
       <div id='admin-nav'>
         <h2>Admin Dashboard</h2>
         <div id='admin-options'>
           <a href="/admin/dashboard"><h3>Analytics</h3></a>
           <h3 id='active'>Messages</h3>
-        <Button type="primary" icon={<LogoutOutlined />} onClick={() => {
-            localStorage.removeItem('token');
-            window.location.reload();
-        }} ghost style={{marginLeft:"50px"}}>Logout</Button>
+          <Button
+            type="primary"
+            icon={<LogoutOutlined />}
+            onClick={() => {
+              localStorage.removeItem('token');
+              window.location.reload();
+            }}
+            ghost
+            style={{ marginLeft: "50px" }}
+          >
+            Logout
+          </Button>
         </div>
       </div>
-      {/* ..... End of the navbar ....... */}
 
-        {/* Left - Message List */}
+      {/* Message List */}
       <div className="message-list">
         <Title level={3}>--- Messages ---</Title>
         <List
@@ -88,7 +116,7 @@ const handleSendReply = async () => {
         />
       </div>
 
-      {/* Right - Message Content */}
+      {/* Message Details */}
       <div className="message-detail">
         {selectedMessage ? (
           <>

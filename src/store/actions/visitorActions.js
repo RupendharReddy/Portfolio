@@ -18,7 +18,8 @@ export const fetchVisitorStats = () => async (dispatch) => {
   try {
     dispatch({ type: 'FETCH_VISITOR_STATS_REQUEST' });
     console.log("fetching visitor stats", localStorage.getItem('token'));
-    const { data } = await axios.get('http://localhost:5000/api/visitor',{
+    // const { data } = await axios.get('http://localhost:5000/api/visitor',{
+    const { data } = await axios.get('https://portfolio-backend-gmwu.onrender.com/api/visitor',{
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
