@@ -1,6 +1,6 @@
 import React from "react";
-import { Form, Input, Button, Typography, message } from "antd";
-import { MailOutlined, PhoneOutlined, EnvironmentOutlined } from '@ant-design/icons';
+import { Form, Input, Button, Typography , Row , Col, notification} from "antd";
+import { MailOutlined, PhoneOutlined, EnvironmentOutlined, LinkedinOutlined, GithubOutlined } from '@ant-design/icons';
 import { useDispatch } from "react-redux";
 import { submitContactForm } from "../store/actions/contactActions";
 import "../styles/contact.css";
@@ -10,19 +10,33 @@ const { Title, Paragraph } = Typography;
 const Contact = () => {
   const [form] = Form.useForm();
   const dispatch = useDispatch();
+  const [api, contextHolder] = notification.useNotification();
 
   const handleFinish = async (values) => {
-    try {
-      await dispatch(submitContactForm(values));
-      message.success("Message sent successfully!");
+    const result = await dispatch(submitContactForm(values));
+
+    if (result.success) {
+      api.success({
+        message: 'Message Sent',
+        description: 'Your message was sent successfully!',
+        placement: 'topRight',
+        duration: 3,
+      });
       form.resetFields();
-    } catch (error) {
-      message.error("Something went wrong to send the message. Please try again.", error);
+    } else {
+      api.error({
+        message: 'Message Failed',
+        description: 'Error sending the message. Please try again or contact me manually at varugurupendharreddy@gmail.com.',
+        placement: 'topRight',
+        duration: 5,
+      });
     }
   };
+  
 
   return (
     <section id="contact" className="contact-section">
+      {contextHolder}
       <div style={{ textAlign: "center", marginBottom: "60px", color: "#fff" }}>
         <Title style={{ color: "#fff"}} id="services-title" ><b style={{ color: "red" }}>- </b>CONTACT ME<b style={{ color: "red" }}> -</b></Title>
       </div>
@@ -35,31 +49,42 @@ const Contact = () => {
             Feel free to reach out to me via any of the following ways:
           </Paragraph>
 
-          <div className="contact-item">
-            <EnvironmentOutlined className="contact-icon" />
-            <span>Willing to relocate to Hyderabad, Chennai, Bangalore, India</span>
-          </div>
 
           <div className="contact-item">
             <MailOutlined className="contact-icon" />
             <span>varugurupendharreddy@gmail.com</span>
           </div>
 
-          <div className="contact-item">
+          {/* <div className="contact-item">
             <PhoneOutlined className="contact-icon" />
             <span>+91 98765 43210</span>
+          </div> */}
+          <div className="contact-item">
+            <EnvironmentOutlined className="contact-icon" />
+            <span>Willing to relocate to Hyderabad, Chennai, Bangalore</span>
+          </div>
+          <br/>
+          <h1>Socialmedia links</h1>
+          <div className="contact-item">
+            <LinkedinOutlined className="contact-icon" style={{ color: "#fff" }}/>
+            <a href="https://www.linkedin.com/in/rupendhar-reddy-varugu-390a53263/" target="_blank" rel="linkedin profile link" style={{ color: "#40a9ff" ,}}>Linked in</a>
+          </div>
+          <div className="contact-item">
+            <GithubOutlined className="contact-icon"  style={{ color: "#fff" }}/>
+            <span><a href="https://github.com/varugurupendharreddy" target="_blank" rel="github profile link" style={{ color: "#40a9ff" ,}}>Github</a></span>
           </div>
         </div>
 
         {/* Contact Form */}
         <div className="contact-form">
+
           <Form layout="vertical" form={form} onFinish={handleFinish}>
             <Form.Item
               label={<span className="form-label">Name</span>}
               name="name"
               rules={[{ required: true, message: "Please enter your name" }]}
             >
-              <Input placeholder="Your Name" />
+              <Input placeholder="Your Name" style={{fontSize: "20px"}}/>
             </Form.Item>
 
             <Form.Item
@@ -70,7 +95,7 @@ const Contact = () => {
                 { type: "email", message: "Please enter a valid email" },
               ]}
             >
-              <Input placeholder="Your Email" />
+              <Input placeholder="Your Email" style={{fontSize: "20px"}}/>
             </Form.Item>
 
             <Form.Item

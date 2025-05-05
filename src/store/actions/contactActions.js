@@ -21,24 +21,6 @@ export const fetchMessages = () => async (dispatch) => {
   }
 };
 
-// Action to send a reply to a contact message
-// export const sendReply = (id, replyText) => async (dispatch) => {
-//   try {
-//     const response = await axios.post(
-//       `http://localhost:5000/api/contact/reply/${id}`,
-//       { replyText },
-//       {
-//         headers: {
-//           Authorization: `Bearer ${localStorage.getItem('token')}`,
-//         },
-//       }
-//     );
-//     dispatch({ type: 'SEND_REPLY_SUCCESS', payload: response.data });
-//   } catch (error) {
-//     dispatch({ type: 'SEND_REPLY_FAILURE', error: error.message });
-//   }
-// };
-
 export const sendReply = (messageId, replyText) => async (dispatch) => {
   try {
     dispatch({ type: 'SEND_REPLY_REQUEST' });
@@ -71,21 +53,46 @@ export const sendReply = (messageId, replyText) => async (dispatch) => {
 //     dispatch({ type: 'SUBMIT_CONTACT_FORM_FAILURE', error: error.message });
 //   }
 // };
+// export const submitContactForm = (formData) => async (dispatch) => {
+//   try {
+//     dispatch({ type: 'CONTACT_FORM_SUBMIT_REQUEST' });
+
+//     const response = await axios.post('http://localhost:5000/api/contact', formData);
+
+//     dispatch({
+//       type: 'CONTACT_FORM_SUBMIT_SUCCESS',
+//       payload: response.data.message,
+//     });
+//   } catch (error) {
+//     dispatch({
+//       type: 'CONTACT_FORM_SUBMIT_FAIL',
+//       payload: error.response?.data?.message || error.message,
+//     });
+//   }
+// };
 export const submitContactForm = (formData) => async (dispatch) => {
   try {
     dispatch({ type: 'CONTACT_FORM_SUBMIT_REQUEST' });
 
     const response = await axios.post('http://localhost:5000/api/contact', formData);
-
+    console.log('response', response);
+    
     dispatch({
       type: 'CONTACT_FORM_SUBMIT_SUCCESS',
       payload: response.data.message,
     });
+
+    return { success: true, message: response.data.message }; // ✅ return for component use
   } catch (error) {
+    const errorMsg = error.response?.data?.message || error.message;
+    console.log('error', errorMsg);
+    
     dispatch({
       type: 'CONTACT_FORM_SUBMIT_FAIL',
-      payload: error.response?.data?.message || error.message,
+      payload: errorMsg,
     });
+
+    return { success: false, message: errorMsg }; // ✅ return for component use
   }
 };
 
