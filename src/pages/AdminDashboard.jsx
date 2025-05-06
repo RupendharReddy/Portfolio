@@ -114,7 +114,8 @@ const AdminDashboard = () => {
           </Button>
         <Button type="primary" icon={<LogoutOutlined />} onClick={() => {
           localStorage.removeItem('token');
-          window.location.reload();
+          // window.location.reload();
+          navigate('/');
         }} ghost style={{marginLeft:"50px"}}>Logout</Button>
         </div>
       </div>

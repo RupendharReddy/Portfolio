@@ -79,7 +79,8 @@ const MessagePage2 = () => {
             icon={<LogoutOutlined />}
             onClick={() => {
               localStorage.removeItem('token');
-              window.location.reload();
+              // window.location.reload();
+              navigate('/');
             }}
             ghost
             style={{ marginLeft: "50px" }}
@@ -121,7 +122,10 @@ const MessagePage2 = () => {
       <div className="message-detail">
         {selectedMessage ? (
           <>
-            <Title level={4}>Message from {selectedMessage.name}</Title>
+            <Title level={4}>Message from - {selectedMessage.name}</Title>
+            <Title level={5}>Mail Id - {selectedMessage.email}</Title>
+            <Title level={5}>Date and Time - {selectedMessage.createdAt}</Title>
+            <Title level={4}>Message:</Title>
             <Paragraph>{selectedMessage.message}</Paragraph>
 
             <Title level={5}>Replies:</Title>

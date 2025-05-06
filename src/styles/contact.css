@@ -77,14 +77,14 @@
   
   .submit-button {
     width: 100%;
-    background-color: #ff4d4f;
-    border-color: #ff4d4f;
+    /* background-color: #ff4d4f; */
+    /* border-color: #ff4d4f; */
     transition: 0.3s;
   }
   
   .submit-button:hover {
     background-color: #ff7875;
-    border-color: #ff7875;
+    /* border-color: #ff7875; */
   }
   .contact-title b{ 
     color: red;
