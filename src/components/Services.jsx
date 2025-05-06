@@ -47,7 +47,7 @@ const serviceData = [
 
 const Services = () => {
   return (
-    <section id="services" style={{ padding: "100px 20px", backgroundColor: "#001529" ,marginTop:"0px"}}>
+    <section id="services" style={{ padding: "80px 20px", backgroundColor: "#001529" ,marginTop:"0px"}}>
       <div style={{ textAlign: "center", marginBottom: "60px", color: "#fff" }}>
         <Title style={{ color: "#fff"}} id="services-title" >SERVICES OFFERED</Title>
         <h3 style={{ color: "#d9d9d9" }} id="service-info">Things I can help you with...</h3>

@@ -167,7 +167,7 @@
     /* border: 2px solid red; */
   }
   .title{
-    font-size: 30px!important;
+    font-size: 28px!important;
     margin-top: -60px!important;
     /* border: 2px solid red; */
   }
@@ -198,5 +198,23 @@
   }
 }
 @media screen and (min-width: 431px) and (max-width: 769px) {
+  #project{
+    display: flex;
+  }
+  .outlined-text-project{
+    font-size: 50px!important;
+    padding-top: 20px;
+    
+    /* border: 2px solid red; */
+  }
+  .title{
+    font-size: 30px!important;
+    margin-top: -60px!important;
+    /* border: 2px solid red; */
+  }
+  #project-card{
+    width:97%;
+    margin-left: 10px;
+  }
   
 }

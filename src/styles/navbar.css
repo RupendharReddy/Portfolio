@@ -88,7 +88,7 @@
   }
   
   /* RESPONSIVENESS */
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 431px) {
     .desktop-menu {
       display: none;
     }
@@ -104,20 +104,18 @@
   
   
     /* 📲 Tablet View (between 769px and 1024px) */
-    @media screen and (min-width: 769px) and (max-width: 1024px) {
-        .desktop-menu {
-          display: flex;
-          gap: 24px;
-          margin-left: auto;
-          margin-right: 20px;
-        }
-      
-        .logo {
-          margin-left: 20px;
-        }
-      
-        .nav-link {
-          font-size: 14px;
-        }
-      }
+  @media screen and (min-width: 431px) and (max-width: 769px) {
+    .desktop-menu {
+      display: none;
+    }
+  
+    .mobile-menu-icon {
+      display: block;
+      margin-left: 400px;
+    }
+    .logo{
+        margin-left: 30px;
+    }
+  
+    }
       

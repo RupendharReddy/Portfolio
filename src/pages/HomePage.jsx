@@ -8,19 +8,23 @@ import ScreenWarningPopup from '../components/ScreenWarningPopup';
 import Navbar from '../components/Navbar';
 import '../styles/homepage.css';
 import { FloatButton } from 'antd';
-import { QuestionCircleOutlined } from '@ant-design/icons';
-const HomePage = () => (
-  <>
-    <ScreenWarningPopup />
-    <Navbar />
-    <Hero />
-    <About />
-    <Projects />
-    <Certificates />
-    <Services />
-    <Contact />
-    <FloatButton.BackTop duration={1000} className='float-button'/>
-  </>
-);
+// import { QuestionCircleOutlined } from '@ant-design/icons';
+
+const HomePage = () => {
+
+  return (
+    <>
+      <ScreenWarningPopup />
+      <Navbar />
+      <Hero />
+      <About />
+      <Projects />
+      <Certificates />
+      <Services />
+      <Contact />
+      <FloatButton.BackTop duration={1000} className='float-button' />
+    </>
+  );
+};
 
 export default HomePage;

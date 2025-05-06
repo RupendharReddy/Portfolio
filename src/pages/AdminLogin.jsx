@@ -96,6 +96,8 @@ const AdminLogin = () => {
             />
             <Button type="primary" htmlType="submit">Login</Button>
           </form>
+          <br/><br/><br/>
+          <Button className='back-btn' onClick={() => navigate('/')}>Go-Back-To-Home</Button>
         </div>
       </div>
     </div>

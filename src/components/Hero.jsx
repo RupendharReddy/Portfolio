@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import '../styles/hero.css'
 import rupe from '../assets/rupe.png'
 // import dotsbg from '../assets/dotsbg.png'
@@ -6,18 +6,22 @@ import cv from '../assets/Rupe_cv.pdf'
 import { Typography } from "antd";
 import { DiscordOutlined, GithubOutlined, LinkedinOutlined, MailOutlined } from "@ant-design/icons";
 import { TypeAnimation } from "react-type-animation";
+import { trackVisitor } from "../store/actions/visitorActions";
 
 const { Title, Paragraph } = Typography;
 
 const Hero = () => {
-  return (
+
+  useEffect(() => {
+    trackVisitor();
+  }, []);  return (
     <section id="hero" style={{ padding: "100px 0px 60px 10px", backgroundColor: "#001529" }}>
       <div class="placeholder">
         <h5>R<br />u<br />p<br />e</h5>
       </div>
       <div className="container">
         <div className="content">
-          <h1>Hi There, i'm</h1>
+          <h1 id="hi">Hi There, i'm</h1>
           <h2 id="name">RUPENDHAR REDDY VARUGU</h2>
           <h5></h5>
           <TypeAnimation

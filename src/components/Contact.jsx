@@ -37,19 +37,18 @@ const Contact = () => {
   return (
     <section id="contact" className="contact-section">
       {contextHolder}
-      <div style={{ textAlign: "center", marginBottom: "60px", color: "#fff" }}>
-        <Title style={{ color: "#fff"}} id="services-title" ><b style={{ color: "red" }}>- </b>CONTACT ME<b style={{ color: "red" }}> -</b></Title>
-      </div>
+      {/* <div style={{ textAlign: "center", marginBottom: "60px", color: "#fff" }}> */}
+      <h1 className="contact-title">
+        <b>- </b>CONTACT ME <b>-</b>
+      </h1>
       <div className="contact-container">
 
         {/* Contact Info */}
         <div className="contact-info">
-          <h1>Get in Touch</h1>
-          <Paragraph className="contact-info-desc">
+          <h1 className="contact-info-title">Get in Touch</h1>
+          <p className="contact-info-desc">
             Feel free to reach out to me via any of the following ways:
-          </Paragraph>
-
-
+          </p>
           <div className="contact-item">
             <MailOutlined className="contact-icon" />
             <span>varugurupendharreddy@gmail.com</span>
@@ -60,11 +59,11 @@ const Contact = () => {
             <span>+91 98765 43210</span>
           </div> */}
           <div className="contact-item">
-            <EnvironmentOutlined className="contact-icon" />
+            <EnvironmentOutlined className="contact-icon" style={{fontSize: "30px"}} />
             <span>Willing to relocate to Hyderabad, Chennai, Bangalore</span>
           </div>
           <br/>
-          <h1>Socialmedia links</h1>
+          <h1 className="contact-info-title">Socialmedia links</h1>
           <div className="contact-item">
             <LinkedinOutlined className="contact-icon" style={{ color: "#fff" }}/>
             <a href="https://www.linkedin.com/in/rupendhar-reddy-varugu-390a53263/" target="_blank" rel="linkedin profile link" style={{ color: "#40a9ff" ,}}>Linked in</a>
@@ -84,7 +83,7 @@ const Contact = () => {
               name="name"
               rules={[{ required: true, message: "Please enter your name" }]}
             >
-              <Input placeholder="Your Name" style={{fontSize: "20px"}}/>
+              <Input placeholder="Your Name" style={ {fontSize: "20px"}} className="input-field"/>
             </Form.Item>
 
             <Form.Item

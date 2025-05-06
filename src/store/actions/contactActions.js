@@ -1,11 +1,15 @@
 // src/store/actions/contactActions.js
 import axios from 'axios';
+const API_URL = import.meta.env.VITE_BASE_URL;
+// const API_URL = import.meta.env.VITE_BASE_URL || 'http://localhost:5000';
+// const API_URL = "http://localhost:5000";
+
 
 // Action to fetch contact messages
 export const fetchMessages = () => async (dispatch) => {
   try {
     // const response = await axios.get('http://localhost:5000/api/contact', {
-    const response = await axios.get('https://portfolio-backend-gmwu.onrender.com/api/contact', {
+    const response = await axios.get( API_URL +'/api/contact', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
         // Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTBl
@@ -27,7 +31,7 @@ export const sendReply = (messageId, replyText) => async (dispatch) => {
     dispatch({ type: 'SEND_REPLY_REQUEST' });
 
     // const response = await axios.post(`http://localhost:5000/api/contact/reply/${messageId}`, { replyText }, {
-    const response = await axios.post(`https://portfolio-backend-gmwu.onrender.com/api/contact/reply/${messageId}`, { replyText }, {
+    const response = await axios.post(API_URL+`/api/contact/reply/${messageId}`, { replyText }, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
@@ -77,7 +81,7 @@ export const submitContactForm = (formData) => async (dispatch) => {
     dispatch({ type: 'CONTACT_FORM_SUBMIT_REQUEST' });
 
     // const response = await axios.post('http://localhost:5000/api/contact', formData);
-    const response = await axios.post('https://portfolio-backend-gmwu.onrender.com/api/contact', formData);
+    const response = await axios.post(API_URL +'/api/contact', formData);
     console.log('response', response);
     
     dispatch({
@@ -102,7 +106,7 @@ export const submitContactForm = (formData) => async (dispatch) => {
 export const markAsSeen = (messageId) => async (dispatch) => {
   try {
     // await axios.put(`http://localhost:5000/api/contact/${messageId}/seen`, null, {
-    await axios.put(`https://portfolio-backend-gmwu.onrender.com/api/contact/${messageId}/seen`, null, {
+    await axios.put(API_URL +`/api/contact/${messageId}/seen`, null, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },

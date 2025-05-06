@@ -30,21 +30,6 @@ const Projects = () => {
         "https://drive.google.com/file/d/1YZjyf6AaR6uxykm8T6-LweXOYy1W84tc/preview",
     },
     {
-      title: "TODO List Web App",
-      description:
-        "A feature-rich task management application to help users organize their daily activities.",
-      features: [
-        "User authentication with JWT for secure access",
-        "Task management: add, mark as finished, delete tasks",
-        "Completed tasks view on a separate page",
-        "User profile with details and task progress tracking",
-      ],
-      technologies: ["React.js", "CSS", "Node.js", "Express.js", "SQL", "JWT"],
-      github: "",
-      videoUrl:
-        "https://drive.google.com/file/d/1i2iweUTUc91_VUarrFlRym8Pp7ZlUmky/preview",
-    },
-    {
       title: "Smart Attendance System",
       description:
         "A facial recognition-based attendance platform ensuring secure, contactless, and automated attendance tracking.(Developed as a group project)",
@@ -67,6 +52,22 @@ const Projects = () => {
       github: "https://github.com/RupendharReddy/todo",
       videoUrl:"https://drive.google.com/file/d/1jLpkZ6ZvHojGblvxrgWRmmUrHDhKC1JI/preview",
     },
+    {
+      title: "TODO List Web App",
+      description:
+        "A feature-rich task management application to help users organize their daily activities.",
+      features: [
+        "User authentication with JWT for secure access",
+        "Task management: add, mark as finished, delete tasks",
+        "Completed tasks view on a separate page",
+        "User profile with details and task progress tracking",
+      ],
+      technologies: ["React.js", "CSS", "Node.js", "Express.js", "SQL", "JWT"],
+      github: "",
+      videoUrl:
+        "https://drive.google.com/file/d/1i2iweUTUc91_VUarrFlRym8Pp7ZlUmky/preview",
+    },
+
   ]);
 
   return (
@@ -80,7 +81,7 @@ const Projects = () => {
           <Card key={idx} id="project-card" bordered={false}>
             <div className="project-content">
               <div className="project-left">
-                <Title level={3} style={{ color: "white",textTransform:"uppercase" ,overflow:"hidden"}}><b style={{color:"red"}}>- </b>{project.title} <b style={{color:"red"}}>-</b></Title>
+                <Title level={3} style={{ color: "white",textTransform:"uppercase" ,overflow:"hidden"}}><b style={{color:"red"}}>- </b>{project.title} <b style={{color:"red"}}> -</b></Title>
                 <p>{project.description}</p>
                 <ul className="feature-list">
                   {project.features.map((item, index) => (

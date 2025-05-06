@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { LoginOutlined, MenuOutlined } from "@ant-design/icons";
 import { Drawer, Button } from "antd";
 import { Link as ScrollLink } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 import "../styles/navbar.css";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [visible, setVisible] = useState(false);
 
   const menuItems = [
@@ -41,7 +43,7 @@ const Navbar = () => {
             {renderLink(key, label)}
           </div>
         ))}
-        < LoginOutlined style={{ fontSize: 24}} onClick={() => window.open('/admin/login', '_blank')} />
+        <LoginOutlined style={{ fontSize: 24 }} onClick={() => navigate('/admin/login')} />
       </div>
 
       <div className="mobile-menu-icon">

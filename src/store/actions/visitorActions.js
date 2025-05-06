@@ -1,5 +1,8 @@
 // src/store/actions/visitorActions.js
 import axios from 'axios';
+const API_URL = import.meta.env.VITE_BASE_URL;
+// const API_URL = import.meta.env.VITE_BASE_URL || 'http://localhost:5000';
+// const API_URL = "http://localhost:5000";
 
 // Action to fetch visitor statistics
 // export const fetchVisitorStats = () => async (dispatch) => {
@@ -14,12 +17,27 @@ import axios from 'axios';
 //     dispatch({ type: 'FETCH_VISITOR_STATS_FAILURE', error: error.message });
 //   }
 // };
+// src/api/visitorApi.js
+
+export const trackVisitor = async () => {
+  try {
+    const response = await fetch(API_URL +`/api/visitor`, {
+      method: 'POST',
+    });
+
+    const data = await response.json();
+    console.log('Visitor tracked:', data);
+  } catch (error) {
+    console.error('Error tracking visitor:', error);
+  }
+};
+
 export const fetchVisitorStats = () => async (dispatch) => {
   try {
     dispatch({ type: 'FETCH_VISITOR_STATS_REQUEST' });
     console.log("fetching visitor stats", localStorage.getItem('token'));
     // const { data } = await axios.get('http://localhost:5000/api/visitor',{
-    const { data } = await axios.get('https://portfolio-backend-gmwu.onrender.com/api/visitor',{
+    const { data } = await axios.get(API_URL +'/api/visitor',{
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
