@@ -20,6 +20,7 @@ import { Button } from 'antd';
 // import { Navigate } from 'react-router-dom';
 import { LogoutOutlined } from '@ant-design/icons';
 import { fetchMessages } from '../store/actions/contactActions';
+import { useNavigate } from 'react-router-dom';
   
 ChartJS.register(
   CategoryScale,
@@ -42,7 +43,7 @@ const AdminDashboard = () => {
   const dispatch = useDispatch();
   const { stats, status, error } = useSelector((state) => state.visitor);
   const { messages } = useSelector((state) => state.contact);
-
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(fetchVisitorStats());
     dispatch(fetchMessages()); // 👈 Fetch messages here too
@@ -106,7 +107,11 @@ const AdminDashboard = () => {
         <h2>Admin Dashboard</h2>
         <div id='admin-options'>
           <h3 id='active'>Analytics</h3>
-          <a href="/admin/messages"><h3>Messages</h3></a>
+          <Button type="link" onClick={() => {
+            navigate('/admin/messages');
+          }}>
+            <h3>Messages</h3>
+          </Button>
         <Button type="primary" icon={<LogoutOutlined />} onClick={() => {
           localStorage.removeItem('token');
           window.location.reload();

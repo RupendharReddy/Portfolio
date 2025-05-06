@@ -4,6 +4,7 @@ import { fetchMessages, sendReply, markAsSeen } from '../store/actions/contactAc
 import { List, Badge, Typography, Button, Input, notification } from 'antd';
 import '../styles/messagePage.css';
 import { LogoutOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 
 const { TextArea } = Input;
 const { Title, Paragraph } = Typography;
@@ -14,7 +15,7 @@ const MessagePage2 = () => {
   const [selectedMessage, setSelectedMessage] = useState(null);
   const [replyText, setReplyText] = useState('');
   const [api, contextHolder] = notification.useNotification();
-
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(fetchMessages());
   }, [dispatch]);
@@ -71,7 +72,7 @@ const MessagePage2 = () => {
       <div id='admin-nav'>
         <h2>Admin Dashboard</h2>
         <div id='admin-options'>
-          <a href="/admin/dashboard"><h3>Analytics</h3></a>
+          <Button type="link" onClick={() => navigate('/admin/dashboard')}>Analytics</Button>
           <h3 id='active'>Messages</h3>
           <Button
             type="primary"
