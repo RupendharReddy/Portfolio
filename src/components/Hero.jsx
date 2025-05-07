@@ -4,7 +4,7 @@ import rupe from '../assets/rupe.png'
 // import dotsbg from '../assets/dotsbg.png'
 import cv from '../assets/Rupe_cv.pdf'
 import { Typography } from "antd";
-import { DiscordOutlined, GithubOutlined, LinkedinOutlined, MailOutlined } from "@ant-design/icons";
+import { DiscordOutlined, GithubOutlined, LinkedinOutlined, MailOutlined, SafetyCertificateOutlined } from "@ant-design/icons";
 import { TypeAnimation } from "react-type-animation";
 import { trackVisitor } from "../store/actions/visitorActions";
 
@@ -61,11 +61,12 @@ const Hero = () => {
             <a href="https://github.com/RupendharReddy" target="_blank" rel="noopener noreferrer">
               <GithubOutlined className="link" />
             </a><br />
-            <a href="mailto:varugurupendharreddy@gmail.com">
-              <MailOutlined className="link" />
+            <a href="https://drive.google.com/drive/folders/1NOG7MCjKDFwvV3o8NN-SMq1mIMlXIe8R?usp=drive_link">
+            <SafetyCertificateOutlined className="link"/>
             </a><br />
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <DiscordOutlined className="link" />
+            <a href="mailto: varugurupendharreddy@gmail.com" target="_blank" rel="noopener noreferrer">
+              {/* <DiscordOutlined className="link" /> */}
+              <MailOutlined className="link" />
             </a>
           {/* </div> */}
           </div>

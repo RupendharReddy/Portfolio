@@ -58,7 +58,8 @@ const Navbar = () => {
         placement="top"
         onClose={() => setVisible(false)}
         open={visible}
-        height="45vh"
+        // height="45vh"
+        height="auto"
         zIndex={100}
         className="custom-drawer"
       >
@@ -69,7 +70,7 @@ const Navbar = () => {
             </div>
           ))}
         </div>
-        < LoginOutlined onClick={() => window.open('/admin/login', '_blank')} />
+        <LoginOutlined style={{ fontSize: 24 }} onClick={() => navigate('/admin/login')} />
       </Drawer>
     </div>
   );
